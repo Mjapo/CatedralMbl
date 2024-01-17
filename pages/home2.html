@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catedral MBL</title>
+    <link rel="stylesheet" href="../css/style2.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="../img/Catedral.webp" alt="Catedral" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Adiciona um campo de entrada de pesquisa oculto -->
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Digite aqui..." style="display: none;">
+                <img src="../img/busca.png" alt="Ícone de Busca" class="icon-img" id="search-icon">
+            </div>
+
+            <script>
+                // Obtenha referências para os elementos
+                const searchInput = document.getElementById('search-input');
+                const searchIcon = document.getElementById('search-icon');
+
+                // Adicione um ouvinte de clique ao ícone de busca
+                searchIcon.addEventListener('click', function () {
+                    // Exiba o campo de pesquisa quando o ícone de busca for clicado
+                    searchInput.style.display = 'inline-block';
+                    // Coloque o foco no campo de pesquisa
+                    searchInput.focus();
+                });
+
+                // Adicione um ouvinte de tecla ao campo de pesquisa
+                searchInput.addEventListener('keyup', function (event) {
+                    // Verifique se a tecla pressionada é Enter (código 13)
+                    if (event.key === 'Enter') {
+                        // Realize a ação de pesquisa aqui (substitua com sua própria lógica)
+                        alert('Pesquisa por: ' + searchInput.value);
+                        // Limpe o campo de pesquisa e oculte-o novamente
+                        searchInput.value = '';
+                        searchInput.style.display = 'none';
+                    }
+                });
+            </script>
+
+        </div>
+    </header>
+
+    <!-- Seção Principal -->
+    <main>
+        <div class="container">
+            <h2> Destaques da Semana!!!!</h2>
+            <div class="image-container" id="zoomable">
+                <h2>Imagem 1</h2>
+                <a href="pagina1.html">
+                    <img src="../img/história-do-livro.jpg" alt="Imagem Centralizada" class="main-img">
+                </a>
+            </div>
+
+            <div class="image-row">
+                <div class="image-block" id="zoomable1">
+                    <h2>Imagem 2</h2>
+                    <a href="pagina2.html">
+                        <img src="../img/livro2.jpg" alt="Imagem 2" class="block-img">
+                    </a>
+                </div>
+
+                <div class="image-block" id="zoomable2">
+                    <h2>Imagem 3</h2>
+                    <a href="pagina3.html">
+                        <img src="../img/livro2.jpg" alt="Imagem 3" class="block-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Função para exibir mensagem
+        function mostrarMensagem(event, mensagem) {
+            // Remova mensagens anteriores, se houver
+            const mensagensAnteriores = document.querySelectorAll('.mensagem-box');
+            mensagensAnteriores.forEach(mensagemBox => mensagemBox.remove());
+
+            const mensagemBox = document.createElement('div');
+            mensagemBox.classList.add('mensagem-box');
+            mensagemBox.textContent = mensagem;
+
+            // Posiciona a mensagem ao lado do cursor
+            mensagemBox.style.left = `${event.clientX + 10}px`;
+            mensagemBox.style.top = `${event.clientY + 10}px`;
+
+            // Adiciona a mensagem ao corpo do documento
+            document.body.appendChild(mensagemBox);
+
+            // Remove a mensagem após um tempo
+            setTimeout(() => {
+                mensagemBox.remove();
+            }, 2000); // Tempo em milissegundos (2 segundos)
+        }
+
+        // Obtenha referências para as imagens
+        const imagemPrincipal = document.getElementById('zoomable');
+        const imagem2 = document.getElementById('zoomable1');
+        const imagem3 = document.getElementById('zoomable2');
+
+        // Adicione ouvintes de evento para as imagens
+        imagemPrincipal.addEventListener('mouseover', (event) => mostrarMensagem(event, 'Esta é a Imagem 1'));
+        imagem2.addEventListener('mouseover', (event) => mostrarMensagem(event, 'Esta é a Imagem 2'));
+        imagem3.addEventListener('mouseover', (event) => mostrarMensagem(event, 'Esta é a Imagem 3'));
+    </script>
+
+    <!-- Adiciona a marcação HTML para os destaques -->
+    <div class="destaques-container" id="destaques-container">
+        <!-- Destaques iniciais -->
+        <div class="destaque-box">
+            <h3>Categoria 1</h3>
+            <!-- Lista de Destaque -->
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </div>
+        <div class="destaque-box">
+            <h3>Categoria 2</h3>
+            <!-- Lista de Destaque -->
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </div>
+        <!-- Adicione mais destaques conforme necessário -->
+    </div>
+
+    <script>
+        // Obtenha a referência para o contêiner de destaques
+        const destaquesContainer = document.getElementById('destaques-container');
+
+        // Número inicial de destaques
+        let numDestaques = 2;
+
+        // Limite total de destaques
+        const limiteTotalDestaques = 50;
+        // Limite de destaques por vez
+        const limiteDestaquesPorVez = 10;
+
+        // Lista de temas aleatórios
+        const temasAleatorios = ["Tecnologia", "Ciência", "Arte", "Esportes", "Saúde", "Entretenimento", "Moda", "Viagens", "Culinária", "História"];
+
+        // Última posição de rolagem
+        let lastScrollPosition = 0;
+
+        // Adicione um ouvinte de rolagem à janela
+        window.addEventListener('scroll', function () {
+            // Verifique a posição do rolo
+            const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+            // Verifique se o usuário está rolando para baixo
+            if (scrollPosition > lastScrollPosition) {
+                // Verifique se o usuário rola até o final da página e o limite total de destaques não foi atingido
+                if (scrollPosition + window.innerHeight >= document.documentElement.scrollHeight - 50 && numDestaques < limiteTotalDestaques) {
+                    // Determine quantos destaques adicionar nesta iteração
+                    const destaquesAAgregar = Math.min(limiteDestaquesPorVez, limiteTotalDestaques - numDestaques);
+
+                    // Adicione os destaques conforme necessário
+                    for (let i = 1; i <= destaquesAAgregar; i++) {
+                        numDestaques++;
+                        const temaAleatorio = temasAleatorios[Math.floor(Math.random() * temasAleatorios.length)];
+
+                        const newDestaque = document.createElement('div');
+                        newDestaque.classList.add('destaque-box');
+                        newDestaque.innerHTML = `
+                            <h3>${temaAleatorio}</h3>
+                            <ul>
+                                <li><a href="pagina${numDestaques * 2 - 1}.html">Item 1</a></li>
+                                <li><a href="pagina${numDestaques * 2}.html">Item 2</a></li>
+                            </ul>
+                        `;
+                        // Adicione o bloco de destaques ao contêiner
+                        destaquesContainer.appendChild(newDestaque);
+                    }
+                }
+            }
+
+            // Atualize a última posição de rolagem
+            lastScrollPosition = scrollPosition;
+        });
+
+    </script>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank">
+                    <img src="logos/face.jpg" alt="Facebook" class="icon-img">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="logos/insta.jpg" alt="Instagram" class="icon-img">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="logos/discord.jpg" alt="Discord" class="icon-img">
+                </a>
+            </div>
+
+            <div class="social-links">
+                <!-- Seu link "Topo" -->
+                <a href="#" id="scroll-top-link">Topo</a>
+                <!-- Outros links sociais aqui -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Obtenha a referência para o link "Topo"
+        const scrollTopLink = document.getElementById('scroll-top-link');
+
+        // Adicione um ouvinte de clique ao link "Topo"
+        scrollTopLink.addEventListener('click', function (event) {
+            event.preventDefault(); // Evita o comportamento padrão do link
+
+            // Faça um rolar suave para o topo da página
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

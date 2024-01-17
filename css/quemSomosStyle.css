@@ -1,0 +1,117 @@
+body {
+    background-color: #1A1A1A;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #E3C88F;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; /* Distribui os elementos no cabeçalho */
+    align-items: center;
+}
+
+.buttons {
+    display:block;
+    justify-content: center;
+    align-items: center;
+    text-decoration: black;
+    
+    
+}
+
+button {
+    margin: 0 10px;
+    background-color:#E3C88F;
+   
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo-img {
+    max-width: 50px; /* Tamanho máximo para o logotipo da Catedral */
+    position: absolute;
+    left: 0px;
+    border-radius: 10px;  
+    padding: 10px;
+    margin-top: 20px;
+     /* Move o logo para o canto superior esquerdo */
+}
+
+.search {
+    margin-left: 5px;
+    position: absolute;
+    right: 20px;   
+    margin-top:-20px;  
+    
+    
+}
+
+#search-input {
+    background-color: white; /* Cor de fundo branca para a barra de busca */
+    padding: 5px;
+    margin-left: 5px;
+    position: absolute;
+    right: 35px;
+    margin-top: 0px;    
+
+}
+
+#search-input {
+    background-color: white; /* Cor de fundo branca para a barra de busca */
+    padding: 5px;
+    margin-left: 5px;
+    position: absolute;
+    right: 35px;
+    margin-top: 0px;    
+
+}
+
+.icon-img {
+    max-width: 30px; /* Tamanho máximo para o ícone de busca */
+    height: auto;
+    cursor: pointer; /* Muda o cursor ao passar por cima, indicando que é clicável */
+}
+
+
+
+
+/* criando a footer */
+
+
+footer {
+    background-color: #E3C88F;
+    padding: 5px 0;
+    text-align:right;
+    margin-top: auto; 
+   
+    /* Empurra o footer para a parte inferior */
+}
+
+.social-links {
+    display: flex;
+    justify-content: left;
+    right: 35px;
+    margin-bottom: 20px; 
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}

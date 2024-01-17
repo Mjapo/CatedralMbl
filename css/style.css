@@ -1,0 +1,132 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------- */
+
+.fundo {
+    background-color: #1A1A1A;
+}
+
+.cabecalho {  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    background-color: #E3C88F;
+}
+
+
+.cabecalho_imagem {
+    height: 5vh;
+}
+
+.cabecalho_pesquisa {
+    display: flex;
+    width: 4em;
+    gap: 5em;
+}
+
+#search-input {
+    background-color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.principal {
+    margin: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 6em auto;
+    gap: 5em;
+    width: 50vw;
+}
+
+.principal_card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1em;
+    height: 50vh;
+}
+
+.principal_card_titulo {
+    color: aliceblue;
+    font-size: 2.5em;
+}
+
+.principal_card_img {
+    height: inherit;
+    width: inherit;
+    border-radius: 1em;
+    width: 50vw;
+}
+
+.principal_minicards {
+    width: 56vw;
+    display: flex;
+    gap: 4em;
+}
+
+.principal_minicard {
+    width: 50%;
+}
+
+.principal_minicard_titulo {
+    color: aliceblue;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+.principal_minicard_img {
+    width: 78%;
+    height: 25vh;
+    border-radius: 0.5em 1em 1em 1em;
+}
