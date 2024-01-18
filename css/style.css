@@ -113,6 +113,7 @@ table {
     width: 56vw;
     display: flex;
     gap: 4em;
+    margin-bottom: 3.5em;
 }
 
 .principal_minicard {
@@ -128,5 +129,28 @@ table {
 .principal_minicard_img {
     width: 78%;
     height: 25vh;
+    border-radius: 0.5em 1em 1em 1em;
+}
+
+.conteudo_sessao {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+}
+
+.conteudo_titulo {
+    font-size: 2.5em;
+    color: aliceblue;
+    margin: 1em 0;
+}
+
+.conteudo_card_titulo {
+    color: aliceblue;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.conteudo_card_img {
+    width: 15em;
     border-radius: 0.5em 1em 1em 1em;
 }
