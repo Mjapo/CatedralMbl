@@ -167,3 +167,11 @@ table {
     height: 0;
     transition: 0.7s;
 }
+
+.resultado_card {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    background-color: aliceblue;
+    padding: 1em;
+}
