@@ -79,12 +79,18 @@ table {
     margin-right: 5px;
 }
 
+.sessao_principal {
+    width: 100%;
+    display: flex;
+}
+
 .principal {
     margin: 5vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 6em auto;
+    margin-right: 5.5em;
     gap: 5em;
     width: 50vw;
 }
@@ -153,4 +159,11 @@ table {
 .conteudo_card_img {
     width: 15em;
     border-radius: 0.5em 1em 1em 1em;
+}
+
+.resultado_pesquisa {
+    background-color: #E3C88F;
+    width: 20vw;
+    height: 0;
+    transition: 0.7s;
 }

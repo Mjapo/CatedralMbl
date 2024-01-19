@@ -1,5 +1,6 @@
 const searchInput = document.getElementById('search-input');
 const searchIcon = document.getElementById('search-icon');
+const pesquisa_conteudos = document.getElementById('resultado_pesquisa')
 
 let aparecerPesquisa = true;
 searchIcon.addEventListener('click', function () {
@@ -9,6 +10,7 @@ searchIcon.addEventListener('click', function () {
         aparecerPesquisa = false;
     } else {
         searchInput.style.display = "none";
+        pesquisa_conteudos.style.height = "0";
         aparecerPesquisa = true;
     }
 
@@ -16,8 +18,7 @@ searchIcon.addEventListener('click', function () {
 
 searchInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
-        alert('Pesquisa por: ' + searchInput.value);
         searchInput.value = '';
-        searchInput.style.display = 'none';
+        pesquisa_conteudos.style.height = "30vh";
     }
 });
