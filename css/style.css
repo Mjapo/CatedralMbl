@@ -51,26 +51,51 @@ table {
 
 .fundo {
     background-color: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .cabecalho {  
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
-    background-color: #E3C88F;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  background-color: #E3C88F;
 }
-
 
 .cabecalho_imagem {
-    height: 5vh;
+  height: 5vh;
+  max-width: 100%; 
+  border-radius: 15px;
 }
 
+.cabecalho_imagem:hover{
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+
 .cabecalho_pesquisa {
-    display: flex;
-    width: 4em;
-    gap: 5em;
+  display: flex;
+  align-items: center; /* Alinha os itens ao centro */
+  gap: 1em;
 }
+
+#search-input {
+  background-color: white;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: none; /* Inicialmente oculto */
+}
+
+#search-icon {
+  cursor: pointer;
+}
+
 
 #search-input {
     background-color: white;
@@ -109,6 +134,12 @@ table {
     width: 50vw;
 }
 
+.principal_card_img:hover{
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
 .principal_minicards {
     width: 56vw;
     display: flex;
@@ -132,6 +163,12 @@ table {
     border-radius: 0.5em 1em 1em 1em;
 }
 
+.principal_minicard_img:hover{
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
 .conteudo_sessao {
     display: flex;
     gap: 3em;
@@ -139,18 +176,157 @@ table {
 }
 
 .conteudo_titulo {
-    font-size: 2.5em;
-    color: aliceblue;
-    margin: 1em 0;
+  font-size: 2.5em;
+  color: aliceblue;
+  margin: 1em 0;
+}
+
+.conteudo_card {
+  width: 15em;
+  border-radius: 0.5em 1em 1em 1em;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .conteudo_card_titulo {
-    color: aliceblue;
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+  color: aliceblue;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  padding: 10px;
+  background-color: #333;
 }
 
 .conteudo_card_img {
-    width: 15em;
-    border-radius: 0.5em 1em 1em 1em;
+  width: 100%;
+  height: 15em; 
+  object-fit: cover;
+  border-radius: 0.5em 1em 1em 1em;
+}
+
+
+.conteudo_card:hover {
+  transform: scale(1.05);
+}
+
+.conteudo_card:hover .conteudo_card_titulo {
+  background-color: #E3C88F;
+  color: #333;
+  cursor: pointer;
+}
+
+.conteudo_vermais {
+  background-color: #E3C88F;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.conteudo_vermais:hover {
+  background-color: #333;
+  color: #E3C88F;
+}
+
+
+
+.Rodape {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  background-color: #E3C88F;
+  margin-top: auto; 
+}
+
+.link-rodape {
+  height: 100%; 
+  display: flex;
+  align-items: center;
+}
+
+.rodape-img {
+  height: 40px;
+  width: auto; 
+  margin: 0 10px; 
+  border-radius: 20px;
+}
+
+#scroll-top-link {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background-color: #E3C88F;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#scroll-top-link:hover {
+  background-color: #333;
+  color: #E3C88F;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  /* Estilos para telas menores ou iguais a 600px de largura */
+  
+  .cabecalho {
+      flex-direction: column;
+      justify-content: space-around;
+      height: auto;
+  }
+
+  .cabecalho_pesquisa {
+      flex-direction: column;
+      width: 100%;
+      gap: 1em;
+  }
+
+  .cabecalho_imagem {
+      justify-content: center; 
+      align-items: center; 
+  }
+
+  #search-input {
+      width: 100%;
+      margin: 5px; /* Ajusta a margem para melhor visualização */
+  }
+
+  .principal {
+      width: 90vw;
+      margin: 2em auto;
+      gap: 2em;
+  }
+
+  .principal_card {
+      height: auto;
+  }
+
+  .principal_card_img {
+      width: 100%;
+  }
+
+  .principal_minicards {
+      width: 90vw;
+      gap: 2em;
+      margin-bottom: 2em;
+  }
+
+  .conteudo_sessao {
+      gap: 1em;
+  }
+
+  .conteudo_card_img {
+      width: 100%;
+  }
 }
