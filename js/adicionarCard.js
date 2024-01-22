@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function renderCards(jsonData) {
-    const cardContainer = document.getElementById("conteudo_sessao");
+  const cardContainer = document.getElementById("conteudo_sessao");
 
   jsonData.forEach(function(data) {
     const cardElement = document.createElement("div");
