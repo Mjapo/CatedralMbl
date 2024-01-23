@@ -7,8 +7,8 @@ botaoVermais.addEventListener("click", function(event){
 
 document.addEventListener("DOMContentLoaded", function() {
     fetch(`http://localhost:8080/api/artigos?page=${botaoContador}&size=3`).then(response => response.json()).then(data => {
-        console.log(botaoContador)
         const jsonData = data.map(value => ({
+          archive: value.nomeArquivo,
           title: value.titulo,
           imageUrl: "../img/livro2.jpg"
         }));
@@ -23,9 +23,11 @@ function renderCards(jsonData) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("conteudo_card");
 
-    cardElement.innerHTML = `
+    cardElement.innerHTML = `<a href="http://localhost:8080/api/view/${data.archive}">
       <h1 class="conteudo_card_titulo">${data.title}</h1>
       <img class="conteudo_card_img" src="${data.imageUrl}" alt="Card Image">
+    </a>
+      
     `;
 
     cardContainer.appendChild(cardElement);

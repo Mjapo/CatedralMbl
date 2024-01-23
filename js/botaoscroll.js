@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         fetch(`http://localhost:8080/api/artigos?page=${botaoContador}&size=3`).then(response => response.json()).then(data => {
             const jsonData = data.map(value => ({
+                archive: value.nomeArquivo,
                 title: value.titulo,
                 imageUrl: "../img/livro2.jpg"
             }));
