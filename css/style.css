@@ -97,7 +97,6 @@ gap: 1em;
   transition: width 0.3s ease, margin 0.3s ease; /* Adiciona uma transição suave */
 }
 
-/* Adicione essa regra para centralizar o #search-input quando clicado no mobile */
 #search-input:focus {
   width: 80%; /* Ajusta a largura quando em foco */
   margin: 5px auto; /* Centraliza o input */
@@ -177,9 +176,6 @@ gap: 1em;
   margin-top: 1em; 
   gap: 20em;/* Adicione um espaço superior entre o título e a imagem */
 }
-
-
-
 
 
 .principal_minicard_img:hover {
@@ -295,7 +291,7 @@ border-radius: 20px;
 }
 
 .resultado_pesquisa:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adiciona sombreamento quando hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
 }
 
 #scroll-top-link {
@@ -335,12 +331,11 @@ color: #E3C88F;
   }
 
   .cabecalho_pesquisa {
-      width: 60%; 
-      gap: 1em;
-      text-align: center;
-      flex-direction: row-reverse;
-  }
-
+    gap: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Muda a justificação para manter os itens nas extremidades */
+}
   .cabecalho_imagem {
       align-items: center;
   }
@@ -350,11 +345,25 @@ color: #E3C88F;
       height: auto;
   }
 
+  
   #search-input {
-    width: 80%; 
-    margin: 5px auto; 
-  }
+    width: 90%; /* Ajuste a largura do campo conforme necessário */
+    margin: 5px auto;
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+    padding:5px; /* Ajuste o preenchimento conforme necessário */
+    display: none;
+}
 
+#search-icon {
+    cursor: pointer;
+    flex-shrink: 0; /* Evita que o ícone de pesquisa encolha ao exibir o campo de pesquisa */
+}
+
+#search-icon.active + #search-input {
+    display: inline-block;
+}
   .sessao_principal {
       display: flex;
       justify-content: center;
@@ -419,6 +428,7 @@ color: #E3C88F;
       margin: 0 auto;
       align-items: center;
     }
-  }
+  
+}
   
 
