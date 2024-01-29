@@ -96,13 +96,64 @@ table {
 
 }
 
+
 .bloco_login {
-    margin: 10px;
-    display: flex;
-    background-color: #E3C88F;
-    border-radius: 2em;
-    flex-direction: column;
-    align-items: center;
-    height: 25em;
-    width: 30em;
+  margin: 10px;
+  display: flex;
+  background-color: #E3C88F;
+  border-radius: 2em;
+  flex-direction: column;
+  align-items: center;
+  height: 25em;
+  width: 30em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.form-title {
+  color: #1A1A1A;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.form-field {
+  margin: 0.5em 0;
+}
+
+.input-field {
+  padding: 0.5em;
+  border: 1px solid #1A1A1A;
+  border-radius: 0.3em;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.submit-button {
+  background-color: #1A1A1A;
+  color: #E3C88F;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.3em;
+}
+
+.submit-button:hover {
+  background-color: #333;
+}
+
+
+@media (max-width: 600px) {
+  .bloco_login {
+      width: 100%;
+  }
+
+  .input-field {
+      margin: 0.5em 0;
+  }
 }
