@@ -14,15 +14,15 @@
     </header>
     <main class="principal">
         <div class="bloco_login">
-            <form class="login-form" method="post" action="">
+            <form class="login-form" method="post" action="http://localhost:8080/api/admin/login" enctype="application/x-www-form-urlencoded">
                 <h1 class="form-title">Login</h1>
                 <p class="form-field">
                     <label for="nome_adm">Usuario</label>
-                    <input class="input-field" type="text" name="nome_adm" placeholder="Digite o usuario">
+                    <input class="input-field" type="text" name="nomeUsuario" placeholder="Digite o usuario">
                 </p>
                 <p class="form-field">
                     <label for="nome_adm">Senha</label>
-                    <input class="input-field" type="password" name="senha_adm" placeholder="Digite a senha">
+                    <input class="input-field" type="password" name="senha" placeholder="Digite a senha">
                 </p>
                 <input class="submit-button" type="submit" value="Logar">
             </form>
