@@ -3,7 +3,7 @@
  */
 import {screen, render, fireEvent} from'@testing-library/react'
 import user from "@testing-library/user-event";
-import './pesquisa'
+import pesquisa from "./pesquisa";
 
 test('Clique no ícone de pequisa exibe a caixa de pesquisa ', () => {
     render(<pesquisa />)
@@ -12,3 +12,4 @@ test('Clique no ícone de pequisa exibe a caixa de pesquisa ', () => {
 
     expect(screen.getByRole('textbox')).toBeVisible()
 })
+
