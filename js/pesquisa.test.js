@@ -1,14 +1,15 @@
 /**
  * @jest-environment jsdom
  */
+import {fireEvent, screen, render} from '@testing-library/dom'
 
-const {searchIcon} = require('../js/pesquisa')
 
-describe('Barra de pesquisa', () => {
+import './pesquisa'
 
-    it('Deve rederizar search input', () => {
-        searchIcon.click()
-        expect(serachIcon.style.display).toBe('inline-block')
-    });
+test('Clique no ícone de pequisa exibe a caixa de pesquisa ', () => {
+    render(document.body)
 
-});
+    fireEvent.click(screen.getByText('Search')) 
+
+    expect(screen.getByRole('textbox')).toBeVisible()
+})
