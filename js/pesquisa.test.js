@@ -1,13 +1,12 @@
 /**
  * @jest-environment jsdom
  */
-import {fireEvent, screen, render} from '@testing-library/dom'
-
-
+import {screen, render, fireEvent} from'@testing-library/react'
+import user from "@testing-library/user-event";
 import './pesquisa'
 
 test('Clique no ícone de pequisa exibe a caixa de pesquisa ', () => {
-    render(document.body)
+    render(<pesquisa />)
 
     fireEvent.click(screen.getByText('Search')) 
 
