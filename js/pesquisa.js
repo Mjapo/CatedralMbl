@@ -6,16 +6,25 @@ const bloco_pesquisa = document.getElementById('resultado_cards');
 let aparecerPesquisa = true;
 
 searchIcon.addEventListener('click', function () {
-    searchInput.style.display = 'inline-block';
-    searchInput.focus();
-    aparecerPesquisa = false;
-    searchInput.placeholder = ''; // Remover o placeholder quando a lupa é clicada
+    if(aparecerPesquisa){
+        searchInput.style.display = 'inline-block';
+        searchInput.focus();
+        aparecerPesquisa = false;
+    } else {
+        searchInput.value = '';
+        pesquisa_conteudos.style.height = '0rem';
+        bloco_pesquisa.style.display = 'none';
+        pesquisa_conteudos.style.display = "none";
+        searchInput.style.display = 'none';
+        aparecerPesquisa = true;
+        
+    }
+    
 });
 
 searchInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
         if (searchInput.value.trim() !== '') {
-            // Realizar a pesquisa se o input não estiver vazio
             fetch(`http://localhost:8080/api/busca/${searchInput.value}`)
                 .then(response => response.json())
                 .then(data => {
@@ -28,10 +37,8 @@ searchInput.addEventListener('keyup', function (event) {
 
             searchInput.value = '';
             pesquisa_conteudos.style.height = '20rem';
+            pesquisa_conteudos.style.display = "block";
             bloco_pesquisa.style.display = 'flex';
-            searchInput.style.display = 'none'; // Ocultar o input após a pesquisa
-            aparecerPesquisa = true;
-            searchInput.placeholder = 'Digite sua pesquisa...'; // Restaurar o placeholder
         }
     }
 });
