@@ -8,6 +8,53 @@
     <title>Login administração</title>
 </head>
 <body class="fundo">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.login-form');
+    
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();  // Evita o envio padrão do formulário
+    
+                // Obter os dados do formulário
+                const formData = new FormData(form);
+    
+                // Fazer uma requisição para obter o token
+                fetch('http://localhost:8080/api/admin/login', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Falha no login. Verifique suas credenciais.');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Verificar se a requisição foi bem-sucedida
+                    if (data) {
+                        // Armazenar o token no localStorage ou em um cookie (por exemplo)
+                        localStorage.setItem('token', data);
+    
+                        // Adicionar o token ao cabeçalho Authorization
+                        const headers = new Headers();
+                        headers.append('Authorization', `Bearer ${data}`);
+    
+                        // Redirecionar para a página desejada
+                        window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/administracao.html';
+                    } else {
+
+                        alert('Falha no login. Verifique suas credenciais.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro durante a requisição:', error);
+                    // Lidar com erros de requisição
+                    alert('Erro durante a requisição');
+                });
+            });
+        });
+    </script>
+
     <header class="cabecalho">
         <img class="cabecalho_imagem" src="../img/Catedral.webp" alt="Logo da catedral">
         <h1>Login administradores</h1>
@@ -29,5 +76,6 @@
             
         </div>
     </main>
+    
 </body>
 </html>

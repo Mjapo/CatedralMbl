@@ -113,8 +113,8 @@ table {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 15em;
-  width: 80%;
+  gap: 10em;
+  width: 50%;
   max-width: 1200px;
 }
 
@@ -176,6 +176,12 @@ table {
   border: 2px solid #333;
   cursor: pointer;
   transition: border-color 0.3s;
+}
+
+.conteudo_sessao {
+  display: flex;
+  gap: 3vw;
+  flex-wrap: wrap;
 }
 
 .conteudo_titulo {
