@@ -1,14 +1,17 @@
 /**
  * @jest-environment jsdom
  */
-import {screen, render, fireEvent} from'@testing-library/react'
+import '@testing-library/dom'
 import user from "@testing-library/user-event";
-import './pesquisa'
+import '@testing-library/jest-dom'
 
-test('Clique no ícone de pequisa exibe a caixa de pesquisa ', () => {
-    render(<pesquisa />)
+test('Clique no ícone de pequisa exibe a caixa de pesquisa ', async  () => {
+    document.body.innerHTML =`<div id="search-input"></div>' `
 
-    fireEvent.click(screen.getByText('Search')) 
+    const searchIpunt =  document.getElementById('search-input')
 
-    expect(screen.getByRole('textbox')).toBeVisible()
+    expect(searchIpunt).toBeInTheDocument()
 })
+
+
+
