@@ -52,8 +52,8 @@ function renderMiniCards(jsonData) {
         cardElement.className = 'resultado_cards';
 
         cardElement.innerHTML = `<div class="resultado_card">
-            <h1 class="resultado_card_titulo">${data.titulo}</h1>
-            <h2 class="resultado_card_tema">${data.tema}</h2>
+            <h1 class="resultado_card_titulo">Titulo:${data.titulo}</h1>
+            <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
         </div>`;
 
         cardContainer.appendChild(cardElement);

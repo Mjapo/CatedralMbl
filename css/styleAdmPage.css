@@ -76,4 +76,21 @@ table {
     border: 2px solid #333;
     cursor: pointer;
     transition: border-color 0.3s;
-  }
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.principal {
+  margin-top: 1em;
+  height: 40vh;
+  width: 40vw;
+  background-color: #E3C88F;
+}
+
+.resultado_card {
+  background-color: aliceblue;
+  margin: 0.5em 0;
+}
+

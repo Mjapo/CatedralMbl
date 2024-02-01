@@ -8,39 +8,7 @@
     <title>Document</title>
 </head>
 <body class="fundo">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Verificar se o token de autorização está presente
-            const token = localStorage.getItem('token');
-
-            // Se o token estiver presente, fazer uma requisição para validar o token
-            if (token) {
-                fetch("http://localhost:8080/api/admin/auth", {
-                    method: "POST", // Método usado para fazer a requisição
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded', // Adapte o cabeçalho conforme necessário
-                        'Authorization': `Bearer ${token}`, // Adiciona o token ao cabeçalho Authorization
-                    },
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // Token válido, continue com o que precisar
-                        console.log("Token válido");
-                    } else {
-                        // Token inválido, redirecionar para a página de login
-                        console.log("Token inválido");
-                        window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/loginAdm.html';
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro durante a requisição:', error);
-                    window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/loginAdm.html';
-                });
-            } else {
-                window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/loginAdm.html';
-            }
-        });
-    </script>
+    <script src="../js/verificarTokenParaAdm.js"></script>
     <header class="cabecalho">
         <img class="cabecalho_imagem" src="../img/Catedral.webp" alt="Logo da catedral">
         <div>
@@ -49,17 +17,35 @@
         </div>
     </header>
     <main>
-        <form action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
-            <input type="file" id="file" name="file">
-            <input type="submit">
-            <select name="tema">
-                <option value="economia">Economia</option>
-                <option value="filosofia">Filosofia</option>
-                <option value="geopolitica">Geopolitica</option>
-                <option value="historia">Historia</option>
-            </select>
-        </form>
+        <div class="principal">
+            <div class="principal_envio">
+                <form class="principal_formulario" id="form_envio" action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" id="file" name="file">
+                    
+                    <select name="tema">
+                        <option value="economia">Economia</option>
+                        <option value="filosofia">Filosofia</option>
+                        <option value="geopolitica">Geopolitica</option>
+                        <option value="historia">Historia</option>
+                    </select>
+                    <input type="submit">
+                </form>
+            </div>
+            <div>
+                <h1>Deletar artigos</h1>
+                <input type="text" id="search-input" class="search" placeholder="Digite aqui...">
+                <div id="resultado_pesquisa" class="resultado_pesquisa">
+                    <div id="resultado_cards" class="resultado_cards">
+                        <div class="resultado_card">
+                        </div>
+                    </div>       
+                </div>
+            </div>
+            
+        </div>
     </main>
-
+    <script src="../js/deletarArtigo.js"></script>
+    <script src="../js/pesquisaParaDeletar.js"></script>
+    <script src="../js/envioDeArtigos.js"></script>
 </body>
 </html>
