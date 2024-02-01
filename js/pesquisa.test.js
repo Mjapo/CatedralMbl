@@ -13,5 +13,3 @@ test('Clique no ícone de pequisa exibe a caixa de pesquisa ', async  () => {
     expect(searchIpunt).toBeInTheDocument()
 })
 
-
-

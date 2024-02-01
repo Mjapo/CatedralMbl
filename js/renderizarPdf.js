@@ -13,6 +13,9 @@
      // Adiciona o elemento fictício à sessao usando o método appendChild.
      sessao.appendChild(elementoFicticio);
  });
+<<<<<<< HEAD
 
  export default sessao
+=======
+>>>>>>> d7be085f3235e2da540360fd0255256974002cb2
  

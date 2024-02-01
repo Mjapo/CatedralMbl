@@ -7,4 +7,5 @@ test('Verifica se o link de rolagem é exibido corretamente',async () => {
     const scrollTopLink = await document.getElementById('scroll-top-link')
 
     expect(scrollTopLink).toBeInTheDocument()
+
 });
