@@ -70,9 +70,17 @@ function renderMiniCards(jsonData) {
         cardElement.className = 'resultado_cards';
 
         cardElement.innerHTML = `<div class="resultado_card">
-            <h1 class="resultado_card_titulo">Titulo:${data.titulo}</h1>
-            <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
-        </div>`;
+    <a href="https://seulink.com" target="_blank">
+        <h1 class="resultado_card_titulo">Titulo:${data.titulo}</h1>
+    </a>
+    <a href="https://seulink.com" target="_blank">
+        <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
+    </a>
+    <a href="https://seulink.com" target="_blank">
+        <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
+    </a>
+    
+    </div>`;
 
         cardContainer.appendChild(cardElement);
     });
