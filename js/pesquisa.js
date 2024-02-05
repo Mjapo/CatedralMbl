@@ -11,12 +11,30 @@ searchIcon.addEventListener('click', function () {
         searchInput.focus();
         aparecerPesquisa = false;
     } else {
-        searchInput.value = '';
-        pesquisa_conteudos.style.height = '0rem';
-        bloco_pesquisa.style.display = 'none';
-        pesquisa_conteudos.style.display = "none";
-        searchInput.style.display = 'none';
-        aparecerPesquisa = true;
+        if(searchInput.value.trim() === ''){
+            searchInput.value = '';
+            pesquisa_conteudos.style.height = '0rem';
+            bloco_pesquisa.style.display = 'none';
+            pesquisa_conteudos.style.display = "none";
+            searchInput.style.display = 'none';
+            aparecerPesquisa = true;
+        } else {
+            fetch(`http://localhost:8080/api/busca/${searchInput.value}`)
+                .then(response => response.json())
+                .then(data => {
+                    const jsonData = data.map(value => ({
+                        titulo: value.titulo,
+                        tema: value.tema
+                    }));
+                    renderMiniCards(jsonData);
+                });
+
+            searchInput.value = '';
+            pesquisa_conteudos.style.height = '20rem';
+            pesquisa_conteudos.style.display = "block";
+            bloco_pesquisa.style.display = 'flex';
+        }
+        
         
     }
     
