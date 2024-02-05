@@ -42,7 +42,7 @@ function renderMiniCards(jsonData) {
     const cardElement = document.createElement('div');
     cardElement.className = 'resultado_cards';
 
-    cardElement.innerHTML = `<a id="card_id" href="http://localhost:8080/api/remove/${data.archive}">
+    cardElement.innerHTML = `<a id="card_id" class="card_click" href="http://localhost:8080/api/remove/${data.archive}">
     <div class="resultado_card">
         <h1 class="resultado_card_titulo">Titulo: ${data.titulo}</h1>
         <h2 class="resultado_card_tema">Tema: ${data.tema}</h2>
@@ -51,29 +51,31 @@ function renderMiniCards(jsonData) {
     </a>`;
 
     cardContainer.appendChild(cardElement);
-    const card = document.getElementById("card_id");
+    const collection = document.getElementsByClassName("card_click");
 
-    card.addEventListener("click", function(event){
-        event.preventDefault();
-
-
-        fetch(this.href, {
-            method: 'DELETE',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
+    for (let i = 0; i < collection.length; i++) {
+        collection[i].addEventListener("click", function(event){
+            event.preventDefault();
+    
+    
+            fetch(this.href, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Requisição com sucesso!');
+                } else {
+                    console.error('Erro na requisição:', response.statusText);
+                }
+            })
+            .catch(error => {
+                // Trata erros de rede ou outros erros de solicitação
+                console.error('Erro na requisição:', error);
+            });
         })
-        .then(response => {
-            if (response.ok) {
-                console.log('Requisição com sucesso!');
-            } else {
-                console.error('Erro na requisição:', response.statusText);
-            }
-        })
-        .catch(error => {
-            // Trata erros de rede ou outros erros de solicitação
-            console.error('Erro na requisição:', error);
-        });
-    })
-});
+      }
+    });
 }
