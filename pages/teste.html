@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styleAdmPage.css">
+    <title>Document</title>
+</head>
+<body class="fundo">
+    <header class="cabecalho">
+        <img class="cabecalho_imagem" src="../img/Catedral.webp" alt="Logo da catedral">
+        <div>
+            <h1>Administração</h1>
+        </div>
+    </header>
+    <main>
+        <div class="principal">
+            <div class="principal_envio">
+                <form class="principal_formulario" id="form_envio" action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" id="file" name="file">
+                    
+                    <select name="tema">
+                        <option value="economia">Economia</option>
+                        <option value="filosofia">Filosofia</option>
+                        <option value="geopolitica">Geopolitica</option>
+                        <option value="historia">Historia</option>
+                    </select>
+                    <input type="submit">
+                </form>
+            </div>
+            <div>
+                <h1>Deletar artigos</h1>
+                <input type="text" id="search-input" class="search" placeholder="Digite aqui...">
+                <div id="resultado_pesquisa" class="resultado_pesquisa">
+                    <div id="resultado_cards" class="resultado_cards">
+                        <div class="resultado_card">
+                        </div>
+                    </div>       
+                </div>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
