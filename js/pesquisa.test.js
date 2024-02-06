@@ -30,17 +30,4 @@ test('Quando clicar no botão search-icon deve aparecer o placeholder', async ()
         expect(searchInput.style.display).toBe('inline-block')
     })
 })
-/*
-test('Escreva um texto no placeholder',async () => {
-    document.body.innerHTML = `
-    <input type="text" id="search-input" value=""`
-    
-    const text = await document.getElementById('search-input')
-    await user.type(text, 'Hello World')
 
-    await waitFor (async() =>{
-        const type = await document.getElementsByTagName('text')
-        expect(type).toHaveValue('Hello World')
-    })    
-});
-*/
