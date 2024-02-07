@@ -48,7 +48,8 @@ searchInput.addEventListener('keyup', function (event) {
                 .then(data => {
                     const jsonData = data.map(value => ({
                         titulo: value.titulo,
-                        tema: value.tema
+                        tema: value.tema,
+                        arquivo: value.nomeArquivo
                     }));
                     renderMiniCards(jsonData);
                 });
@@ -70,18 +71,15 @@ function renderMiniCards(jsonData) {
         cardElement.className = 'resultado_cards';
 
         cardElement.innerHTML = `<div class="resultado_card">
-    <a href="https://seulink.com" target="_blank">
+    <a href="http://localhost:8080/api/view/${data.arquivo}" target="_blank">
         <h1 class="resultado_card_titulo">Titulo:${data.titulo}</h1>
-    </a>
-    <a href="https://seulink.com" target="_blank">
         <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
-    </a>
-    <a href="https://seulink.com" target="_blank">
-        <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
-    </a>
-    
-    </div>`;
+    </a></div>`;
 
         cardContainer.appendChild(cardElement);
+
+        const collection = document.getElementsByClassName("resultado_card_link");
+
+        
     });
 }

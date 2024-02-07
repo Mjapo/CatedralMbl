@@ -227,6 +227,18 @@ table {
   flex-direction: column;
 }
 
+.resultado_card {
+  background-color: #333;
+  border-bottom: 0.5em solid black;
+}
+.resultado_card_titulo {
+  color: aliceblue;
+}
+
+.resultado_card_tema {
+  color: aliceblue;
+}
+
 .conteudo_card:hover {
   transform: scale(1.05);
 }
