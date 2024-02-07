@@ -275,6 +275,12 @@ table {
   border-radius: 20px;
 }
 
+#img_discord {
+  height: 63px;
+  width: 60px;
+  margin-left: 1px;
+}
+
 .resultado_pesquisa {
   width: 100%;
   height: auto;
