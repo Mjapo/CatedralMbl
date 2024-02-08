@@ -231,9 +231,8 @@ table {
   background-color: #333;
   border-bottom: 0.5em solid black;
 }
-.resultado_card_titulo {
-  color: aliceblue;
-}
+
+.resultado_card_titulo {   color: aliceblue;   font-size: 1.2em; }
 
 .resultado_card_tema {
   color: aliceblue;
