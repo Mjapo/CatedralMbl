@@ -41,15 +41,10 @@
     
                         // Redirecionar para a página desejada
                         window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/administracao.html';
-                    } else {
-
-                        alert('Falha no login. Verifique suas credenciais.');
                     }
                 })
                 .catch(error => {
-                    console.error('Erro durante a requisição:', error);
-                    // Lidar com erros de requisição
-                    alert('Erro durante a requisição');
+                    alert('Usuario ou senha incorretos');
                 });
             });
         });
