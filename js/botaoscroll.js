@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const jsonData = data.map(value => ({
                 archive: value.nomeArquivo,
                 title: value.titulo,
-                imageUrl: "../img/livro2.jpg"
+                tema: value.tema
             }));
 
             numeroDeCards = data.length;
             renderCards(jsonData);
         });
+
+        
 
         cardsVisiveis += numeroDeCards;
 
@@ -37,9 +39,13 @@ function renderCards(jsonData) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("conteudo_card");
 
+    if(data.tema === "filosofia") {
+      imagemUrl = "../img/filosofia_1.png"
+    }
+
     cardElement.innerHTML = `
       <h1 class="conteudo_card_titulo">${data.title}</h1>
-      <img class="conteudo_card_img" src="${data.imageUrl}" alt="Card Image">
+      <img class="conteudo_card_img" src="${imagemUrl}" alt="Card Image">
     `;
 
     cardContainer.appendChild(cardElement);

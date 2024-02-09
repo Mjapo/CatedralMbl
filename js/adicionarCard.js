@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const jsonData = data.map(value => ({
           archive: value.nomeArquivo,
           title: value.titulo,
-          imageUrl: "../img/livro2.jpg"
+          tema: value.tema
         }));
         renderCards(jsonData);
     });
@@ -18,14 +18,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function renderCards(jsonData) {
   const cardContainer = document.getElementById("conteudo_sessao");
+  
 
   jsonData.forEach(function(data) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("conteudo_card");
 
+    if(data.tema === "filosofia") {
+      imagemUrl = "../img/filosofia_1.png"
+    }
+
     cardElement.innerHTML = `<a href="http://localhost:8080/api/view/${data.archive}">
       <h1 class="conteudo_card_titulo">${data.title}</h1>
-      <img class="conteudo_card_img" src="${data.imageUrl}" alt="Card Image">
+      <img class="conteudo_card_img" src="${imagemUrl}" alt="Card Image">
     </a>
       
     `;
