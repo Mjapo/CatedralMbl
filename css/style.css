@@ -265,6 +265,10 @@ table {
   color: #E3C88F;
 }
 
+#conteudo_vermais {
+  margin-top: 1em;
+}
+
 .Rodape {
   display: flex;
   justify-content: space-around;
