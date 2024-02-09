@@ -123,7 +123,6 @@ table {
   align-items: flex-start;
   flex-direction: column;
   gap: 1em;
-  height: 50vh;
 }
 
 .principal_card_titulo {
