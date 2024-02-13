@@ -1,3 +1,4 @@
+const backendUrl = "https://catedral-mbl-sc.onrender.com"
 let cardsVisiveis = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -5,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const conteudoSessao = document.getElementById('conteudo_sessao');
         let numeroDeCards = 0;
 
-        fetch(`http://localhost:8080/api/artigos?page=${botaoContador}&size=3`).then(response => response.json()).then(data => {
+        fetch(`${backendUrl}/api/artigos?page=${botaoContador}&size=3`).then(response => response.json()).then(data => {
             const jsonData = data.map(value => ({
                 archive: value.nomeArquivo,
                 title: value.titulo,

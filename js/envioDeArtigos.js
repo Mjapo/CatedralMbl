@@ -1,5 +1,5 @@
 const form = document.querySelector("#form_envio");
-
+const backendUrl = "https://catedral-mbl-sc.onrender.com"
 
 form.addEventListener('submit', function(event) {
     const token = localStorage.getItem('token');
@@ -9,7 +9,7 @@ form.addEventListener('submit', function(event) {
     console.log(token)
     
     if (token) {
-        fetch("http://localhost:8080/api/upload", {
+        fetch(`${backendUrl}/api/upload`, {
             method: "POST", // Método usado para fazer a requisição
             body: formData,
             headers: {

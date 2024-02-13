@@ -19,7 +19,7 @@ searchIcon.addEventListener('click', function () {
             searchInput.style.display = 'none';
             aparecerPesquisa = true;
         } else {
-            fetch(`http://localhost:8080/api/busca/${searchInput.value}`)
+            fetch(`${backendUrl}/api/busca/${searchInput.value}`)
                 .then(response => response.json())
                 .then(data => {
                     const jsonData = data.map(value => ({
@@ -43,7 +43,7 @@ searchIcon.addEventListener('click', function () {
 searchInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
         if (searchInput.value.trim() !== '') {
-            fetch(`http://localhost:8080/api/busca/${searchInput.value}`)
+            fetch(`${backendUrl}/api/busca/${searchInput.value}`)
                 .then(response => response.json())
                 .then(data => {
                     const jsonData = data.map(value => ({
@@ -71,7 +71,7 @@ function renderMiniCards(jsonData) {
         cardElement.className = 'resultado_cards';
 
         cardElement.innerHTML = `<div class="resultado_card">
-    <a href="http://localhost:8080/api/view/${data.arquivo}" target="_blank">
+    <a href="${backendUrl}/api/view/${data.arquivo}" target="_blank">
         <h1 class="resultado_card_titulo">Titulo:${data.titulo}</h1>
         <h2 class="resultado_card_tema">Tema:${data.tema}</h2>
     </a></div>`;

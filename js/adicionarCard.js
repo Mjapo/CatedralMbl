@@ -6,7 +6,7 @@ botaoVermais.addEventListener("click", function(event){
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch(`http://localhost:8080/api/artigos?page=${botaoContador}&size=3`).then(response => response.json()).then(data => {
+    fetch(`${backendUrl}/api/artigos?page=${botaoContador}&size=3`).then(response => response.json()).then(data => {
         const jsonData = data.map(value => ({
           archive: value.nomeArquivo,
           title: value.titulo,
@@ -28,7 +28,7 @@ function renderCards(jsonData) {
       imagemUrl = "../img/filosofia_1.png"
     }
 
-    cardElement.innerHTML = `<a href="http://localhost:8080/api/view/${data.archive}">
+    cardElement.innerHTML = `<a href="${backendUrl}/api/view/${data.archive}">
       <h1 class="conteudo_card_titulo">${data.title}</h1>
       <img class="conteudo_card_img" src="${imagemUrl}" alt="Card Image">
     </a>

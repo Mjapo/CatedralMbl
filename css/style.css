@@ -127,7 +127,7 @@ table {
 
 .principal_card_titulo {
   color: aliceblue;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .principal_card_img {
@@ -397,7 +397,10 @@ table {
   .principal_card {
       height: auto;
       width: 120%;
-      margin: 1em auto;
+      margin: 1em 0.5em;
+  }
+  .principal_card_titulo {
+    font-size: 1.5em;
   }
 
   .principal_card_img {
