@@ -10,7 +10,9 @@
 <body class="fundo">
     <script src="../js/verificarTokenParaAdm.js"></script>
     <header class="cabecalho">
-        <img class="cabecalho_imagem" src="../img/Catedral.webp" alt="Logo da catedral">
+        <a href="home.html">
+            <img class="cabecalho_imagem" src="../img/Catedral.webp" alt="Logo da catedral">
+        </a>
         <div>
             <h1>Administração</h1>
         </div>
@@ -18,17 +20,17 @@
     <main>
         <div class="principal">
             <div class="principal_envio">
-                <form class="principal_formulario" id="form_envio" action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
+                <form class="principal_formulario" id="form_envio" action="https://catedral-mbl-sc.onrender.com/api/upload" method="post" enctype="multipart/form-data">
                     <input type="file" id="file" name="file">
                     
                     <select name="tema">
-                        <option value="economia">Economia</option>
                         <option value="filosofia">Filosofia</option>
-                        <option value="geopolitica">Geopolitica</option>
                         <option value="historia">Historia</option>
                     </select>
                     <input type="submit">
+                    <p id="formulario_aviso">Enviado</p>
                 </form>
+                
             </div>
             <div>
                 <h1>Deletar artigos</h1>

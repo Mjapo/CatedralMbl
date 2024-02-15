@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Token inválido, redirecionar para a página de login
                 console.log("Token inválido");
-                window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/loginAdm.html';
+                window.location.href = 'loginAdm.html';
             }
         })
         .catch(error => {
             console.error('Erro durante a requisição:', error);
-            window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/loginAdm.html';
+            window.location.href = 'loginAdm.html';
         });
     } else {
-        window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/loginAdm.html';
+        window.location.href = 'loginAdm.html';
     }
 });

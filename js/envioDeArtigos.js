@@ -1,5 +1,5 @@
 const form = document.querySelector("#form_envio");
-const backendUrl = "https://catedral-mbl-sc.onrender.com"
+const btn_aviso = document.getElementById("formulario_aviso")
 
 form.addEventListener('submit', function(event) {
     const token = localStorage.getItem('token');
@@ -21,8 +21,17 @@ form.addEventListener('submit', function(event) {
             if (!response.ok) {
                 throw new Error(`Erro durante a requisição: ${response.status} - ${response.statusText}`);
             }
-            // Processar a resposta se necessário
+            
+            setTimeout(mostrarMensagem, 1000);
+
             return response.json(); // ou response.text(), dependendo da resposta da API
         })
     }
 })
+
+function mostrarMensagem() {
+    btn_aviso.style.display = 'block';
+    setTimeout(function() {
+        btn_aviso.style.display = 'none';
+    }, 2000);
+  }
