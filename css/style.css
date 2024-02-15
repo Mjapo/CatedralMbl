@@ -238,6 +238,10 @@ table {
 .resultado_card_titulo {   color:rgba(225,225,225);   font-size:20px; font-family: Roboto, Arial, sans-serif;
   padding: 15px;}
 
+.resultado_card_titulo:hover{
+  color: #333;
+}
+
 .resultado_card_tema {
   color: aliceblue;
 }
@@ -247,9 +251,8 @@ table {
 }
 
 .conteudo_card:hover .conteudo_card_titulo {
-  background-color: #E3C88F;
-  color: #333;
-  cursor: pointer;
+  color:cadetblue;
+  cursor: pointer;  
 }
 
 .conteudo_vermais {
