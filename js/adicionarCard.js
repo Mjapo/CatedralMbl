@@ -25,7 +25,7 @@ function renderCards(jsonData) {
     cardElement.classList.add("conteudo_card");
 
     if(data.tema === "filosofia") {
-      imagemUrl = "../img/filosofia_1.png"
+      imagemUrl = "../img/Filosofia_1.png"
     }
 
     cardElement.innerHTML = `<a href="${backendUrl}/api/view/${data.archive}">
