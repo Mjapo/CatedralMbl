@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers.append('Authorization', `Bearer ${data}`);
 
                 // Redirecionar para a página desejada
-                window.location.href = 'http://127.0.0.1:5500/CatedralMbl/pages/administracao.html';
+                window.location.href = 'https://catedral-mbl-front-end.vercel.app/pages/administracao.html';
             }
         })
         .catch(error => {
