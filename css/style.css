@@ -345,6 +345,7 @@ table {
       margin-bottom: 2em;
   }
 
+
   .cabecalho {
       flex-direction: row;
       justify-content: space-evenly;
@@ -403,15 +404,17 @@ table {
 
   .principal_card {
       height: auto;
-      width: 120%;
+      max-width: 100%;
+      padding-left: 20px;
       margin: 1em 0.5em;
+      align-items: center;
   }
   .principal_card_titulo {
     font-size: 1.5em;
   }
 
   .principal_card_img {
-      width: 80%;
+      width: 40vh;
       height: auto;
   }
 
@@ -444,21 +447,33 @@ table {
 
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-  .principal_minicards {
-      width: 80%;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 2em;
-      margin: 0 auto;
-      align-items: center;
+
+  .principal{
+    width: 90%;
   }
 
-  .conteudo_sessao{
+  .principal_minicards {
+    width: 80%;
+    margin: 0 auto 2em; 
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .conteudo_sessao {
     display: flex;
     gap: 3vw;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
   }
-
+  
 }
+
+@media only screen and (max-width:2000px){
+/*
+aplicar para telas maiores 
+*/
+
+
+} 
