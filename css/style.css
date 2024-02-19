@@ -57,6 +57,7 @@ table {
   min-height: 100vh;
   margin: 0;
   font-family: Roboto, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 .cabecalho {  
@@ -414,7 +415,7 @@ table {
   }
 
   .principal_card_img {
-      width: 40vh;
+      width: 80%;
       height: auto;
   }
 
