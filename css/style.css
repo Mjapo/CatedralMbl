@@ -384,6 +384,10 @@ table {
       display: inline-block;
   }
 
+  .pesquisa {
+    margin-top: 1.5vh;
+  }
+
   .sessao_principal {
       display: flex;
       justify-content: center;
