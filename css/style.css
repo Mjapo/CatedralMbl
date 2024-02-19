@@ -57,6 +57,7 @@ table {
   min-height: 100vh;
   margin: 0;
   font-family: Roboto, Arial, sans-serif;
+  overflow: hidden;
 }
 
 .cabecalho {  
@@ -384,9 +385,6 @@ table {
       display: inline-block;
   }
 
-  .pesquisa {
-    margin-top: 1.5vh;
-  }
 
   .sessao_principal {
       display: flex;
@@ -463,6 +461,13 @@ table {
     gap: 3vw;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+}
+
+@media only screen and (min-height: 406px) and (max-height: 656px) {
+  .resultado_pesquisa {
+    margin-top: 2em;
   }
 
 }
