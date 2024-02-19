@@ -52,7 +52,7 @@ table {
 /* Bloco */
 .fundo {
     background-color: #1A1A1A;
-    display: none;
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;

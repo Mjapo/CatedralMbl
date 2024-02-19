@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 // Token válido, continue com o que precisar
                 console.log("Token válido");
-                fundo.style.display = "flex";
             } else {
                 // Token inválido, redirecionar para a página de login
                 console.log("Token inválido");
