@@ -1,4 +1,6 @@
 const backendUrl = "https://catedral-mbl-sc.onrender.com"
+const fundo = document.querySelector('.fundo');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Verificar se o token de autorização está presente
     const token = localStorage.getItem('token');
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 // Token válido, continue com o que precisar
                 console.log("Token válido");
+                fundo.style.display = "flex";
             } else {
                 // Token inválido, redirecionar para a página de login
                 console.log("Token inválido");
