@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Token inválido, redirecionar para a página de login
                 console.log("Token inválido");
-                window.location.href = 'https://catedral-mbl-front-end.vercel.app/pages/loginAdm.html';
+                window.location.href = 'https://catedral-mbl-sc.vercel.app/pages/loginAdm.html';
             }
         })
         .catch(error => {
             console.error('Erro durante a requisição:', error);
-            window.location.href = 'https://catedral-mbl-front-end.vercel.app/pages/loginAdm.html';
+            window.location.href = 'https://catedral-mbl-sc.vercel.app/pages/loginAdm.html';
         });
     } else {
-        window.location.href = 'https://catedral-mbl-front-end.vercel.app/pages/loginAdm.html';
+        window.location.href = 'https://catedral-mbl-sc.vercel.app/pages/loginAdm.html';
     }
 });
